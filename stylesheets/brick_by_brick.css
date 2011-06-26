@@ -1,0 +1,57 @@
+@import url("whitespace-reset.css");
+
+body {
+  font: normal 20px Helvetica, Arial, sans-serif;
+  color: #333333; }
+
+#board {
+  float: left;
+  width: 704px;
+  height: 704px;
+  margin: 0 20px 0 0; }
+.row {
+  clear: both;
+  overflow: hidden; }
+  .row.heading {
+    margin: 0 0 0 43px;
+    border-bottom: 1px solid #000000; }
+    .row.heading span,
+    .row span.heading {
+      font-size: 16px;
+      font-weight: bold;
+      border: none; }
+    .row.heading span { width: 44px; }
+  .row span {
+    float: left;
+    width: 43px;
+    height: 43px;
+    line-height: 43px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid #000000;
+    border-width: 0 1px 1px 0; }
+    .row span.heading + span { border-left-width: 1px; }
+    .row span.null {
+      text-indent: -8685px;
+      background: #000000; }
+
+#pieces { overflow: hidden; }
+#hints {
+  float: right;
+  width: 500px;
+  padding: 15px 0 0 0; }
+  #hints article {
+    float: left;
+    width: 230px;
+    padding: 0 20px 0 0; }
+    #hints article + article { padding: 0; }
+  #hints h1 {
+    padding: 0 0 5px 0;
+    font-size: 16px; }
+  #hints ol {
+    padding: 0 0 0 18px;
+    font-size: 13px;
+    line-height: 140%; }
+  #hints li {
+    padding: 0 0 8px 5px;
+    list-style: decimal; }

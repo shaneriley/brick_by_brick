@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<game>
+	<across>
+		<hints>
+			<hint>Flows away</hint>
+			<hint>Wrap up</hint>
+			<hint>Wool fancier</hint>
+		</hints>
+		<hints>
+			<hint>Whitman or Auden</hint>
+			<hint>Tea type</hint>
+			<hint>Mental flash</hint>
+		</hints>
+		<hints>
+			<hint>Earthen vessel</hint>
+			<hint>Highly skilled</hint>
+			<hint>Herb</hint>
+		</hints>
+		<hints>
+			<hint>Three dimensional objects</hint>
+			<hint>Moral</hint>
+		</hints>
+		<hints>
+			<hint>Mine entries</hint>
+			<hint>Coming</hint>
+		</hints>
+		<hints>
+			<hint>Alfred E. Neuman's cover</hint>
+			<hint>Eighteen-wheeler</hint>
+			<hint>Harmonious tones</hint>
+		</hints>
+		<hints>
+			<hint>"Years _____"</hint>
+			<hint>Outfit</hint>
+			<hint>Cello's kin</hint>
+		</hints>
+		<hints>
+			<hint>Literary form</hint>
+			<hint>Female ruff</hint>
+			<hint>Heavenly food</hint>
+		</hints>
+		<hints>
+			<hint>Volcano in Sicily</hint>
+			<hint>Did over</hint>
+			<hint>Lapis lazuli, e.g.</hint>
+		</hints>
+		<hints>
+			<hint>Broad winged bird</hint>
+			<hint>Bandit's mouth</hint>
+			<hint>Caspian or Dead</hint>
+		</hints>
+		<hints>
+			<hint>"____ Magic"</hint>
+			<hint>Inscribed stone</hint>
+		</hints>
+		<hints>
+			<hint>Excess</hint>
+			<hint>Suitable for farming</hing>
+		</hints>
+		<hints>
+			<hint>Oil-based spread</hint>
+			<hint>Bemoaning</hint>
+			<hint>At no time, in verse</hint>
+		</hints>
+		<hints>
+			<hint>Rarity</hint>
+			<hint>Pageant host</hint>
+			<hint>Of wings</hint>
+		</hints>
+		<hints>
+			<hint>Leno's talent</hint>
+			<hint>Gush forth</hint>
+			<hint>Types</hint>
+		</hints>
+	</across>
+	<down>
+		<hints>
+			<hint>Heroic tale</hint>
+			<hint>Kitchen spice</hint>
+			<hint>Black carbon</hint>
+		</hints>
+		<hints>
+			<hint>Cord necktie</hint>
+			<hint>Marble</hint>
+			<hint>A bone</hint>
+		</hints>
+		<hints>
+			<hint>Poisonous plant</hint>
+			<hint>Stagger</hint>
+		</hints>
+		<hints>
+			<hint>Decorous</hint>
+			<hint>Price holder</hint>
+			<hint>Eating utensil</hint>
+		</hints>
+		<hints>
+			<hint>'70s nightclub</hint>
+			<hint>Fabricate</hint>
+		</hints>
+		<hints>
+			<hint>Soft hued</hint>
+			<hint>Collects a pension</hint>
+		</hints>
+		<hints>
+			<hint>Supplied with foot</hint>
+			<hint>Campfire treat</hint>
+			<hint>Tree remnant</hint>
+		</hints>
+		<hints>
+			<hint>Ho's strings</hint>
+			<hint>Short articles</hint>
+			<hint>Floe material</hint>
+		</hints>
+		<hints>
+			<hint>Snared</hint>
+			<hint>Makes well</hint>
+			<hint>Very recent</hint>
+		</hints>
+		<hints>
+			<hint>Cos</hint>
+			<hint>Senility</hint>
+		</hints>
+		<hints>
+			<hint>Chuckling sound</hint>
+			<hint>Kind of maid</hint>
+		</hints>
+		<hints>
+			<hint>Fashionable hemline</hint>
+			<hint>Caaesar's breakfast</hint>
+			<hint>Veranda</hint>
+		</hints>
+		<hints>
+			<hint>Like Pindar's work</hint>
+			<hint>Sounds familiar</hint>
+		</hints>
+		<hints>
+			<hint>Honduran harbor</hint>
+			<hint>Person who receives gifts</hint>
+			<hint>Anonymous source, sometimes</hint>
+		</hints>
+		<hints>
+			<hint>Arsenio ____</hint>
+			<hint>Monk</hint>
+			<hint>Drops the ball</hint>
+		</hints>
+	</down>
+	<board>
+		ebbs==furl=moth,
+		poet=pekoe=idea,
+		olla=adept=dill,
+		solids==ethical,
+		==adits=due====,
+		mad=semi=chord=,
+		ago=clothe=viol,
+		canto=ree=manna,
+		etna=remade=gem,
+		=eagle=slot=sea,
+		====its=stela==,
+		surfeit==arable,
+		oleo=ruing=neer,
+		oner=emcee=alar,
+		talk=spew==ilks
+	</board>
+</game>
