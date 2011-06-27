@@ -40,7 +40,7 @@ $(function() {
     },
     createFirstRow: function() {
       var contents = [],
-          freebies = $.trim(game.board[0]).split("");
+          freebies = $.trim(game.board.shift()).split("");
       contents.push("<span class=\"heading\">1</span>");
       for (var i = 0, len = freebies.length; i < len; i++) {
         contents.push("<span" + (freebies[i] === "=" ? " class=\"null\">" : ">") +
@@ -49,13 +49,15 @@ $(function() {
       game.$row.clone().html(contents.join("")).appendTo(game.$board);
     },
     createPieces: function() {
+      var $piece = $("<div />", { "class": "piece" });
+
     },
     createEmptyRows: function() {
-      var $block = $("<div />", { "class": "piece" }).html((new Array(7)).join('<span></span>')),
+      var $piece = $("<div />", { "class": "piece" }).html((new Array(7)).join('<span></span>')),
           $row = (function() {
             var $r = game.$row.clone();
             for (var i = 0; i < 5; i++) {
-              $r.append($block.clone());
+              $r.append($piece.clone());
             }
             return $r;
           })();
