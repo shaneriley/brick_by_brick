@@ -4,6 +4,7 @@ $(function() {
   var game = {
     board: [],
     $board: $("#board"),
+    $pieces: $("#pieces"),
     $row: $("<div />", { "class": "row" }),
     loadFile: function(f) {
       $.get(f, function(xml) {
@@ -33,7 +34,7 @@ $(function() {
       });
     },
     parseRows: function() {
-      game.board = game.$xml.find("board").text().split(",");
+      game.board = game.$xml.find("board").text().replace(/\s/g, "").split(",");
       game.createFirstRow();
       game.createPieces();
       game.createEmptyRows();
@@ -43,14 +44,32 @@ $(function() {
           freebies = $.trim(game.board.shift()).split("");
       contents.push("<span class=\"heading\">1</span>");
       for (var i = 0, len = freebies.length; i < len; i++) {
-        contents.push("<span" + (freebies[i] === "=" ? " class=\"null\">" : ">") +
-                      freebies[i] + "</span>");
+        contents.push(game.createLetter(freebies[i]));
       }
       game.$row.clone().html(contents.join("")).appendTo(game.$board);
     },
+    createLetter: function(c) {
+      return "<span" + (c === "=" ? " class=\"null\">" : ">") + c + "</span>";
+    },
     createPieces: function() {
-      var $piece = $("<div />", { "class": "piece" });
-
+      var $piece = $("<div />", { "class": "piece" }),
+          s1, s2;
+      game.answers = [];
+      for (var i = 0, len = game.board.length; i < game.board.length; i += 2) {
+        game.answers.push([]);
+        game.answers.push([]);
+        console.log(i);
+        for (var j = 0; j < 5; j++) {
+          var letters = [];
+          s1 = game.board[i].substr(j * 3, 3);
+          s2 = game.board[i + 1].substr(j * 3, 3);
+          game.answers[i].push(s1 + s2);
+          $.each((s1 + s2).split(""), function(k, v) {
+            letters.push(game.createLetter(v));
+          });
+          $piece.clone().html(letters.join("")).appendTo(game.$pieces);
+        }
+      }
     },
     createEmptyRows: function() {
       var $piece = $("<div />", { "class": "piece" }).html((new Array(7)).join('<span></span>')),

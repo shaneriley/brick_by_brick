@@ -21,7 +21,8 @@ body {
       font-weight: bold;
       border: none; }
     .row.heading span { width: 44px; }
-  .row span {
+  .row span,
+  .piece span {
     float: left;
     width: 43px;
     height: 43px;
@@ -32,7 +33,8 @@ body {
     border-width: 0 1px 1px 0; }
     .row span.heading + span { border-left-width: 1px; }
     .row span.heading + .piece { border-left: 1px solid #000000; }
-    .row span.null {
+    .row span.null,
+    .piece span.null {
       text-indent: -8685px;
       background: #000000; }
 .piece {
@@ -40,7 +42,9 @@ body {
   width: 132px;
   height: 88px; }
 
-#pieces { overflow: hidden; }
+#pieces {
+  overflow: hidden;
+  padding: 15px 0 0 0; }
   #pieces .piece {
     margin: 0 15px 15px 0;
     border: 1px solid #000000;
