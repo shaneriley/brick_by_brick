@@ -31,11 +31,20 @@ body {
     border: 1px solid #000000;
     border-width: 0 1px 1px 0; }
     .row span.heading + span { border-left-width: 1px; }
+    .row span.heading + .piece { border-left: 1px solid #000000; }
     .row span.null {
       text-indent: -8685px;
       background: #000000; }
+.piece {
+  float: left;
+  width: 132px;
+  height: 88px; }
 
 #pieces { overflow: hidden; }
+  #pieces .piece {
+    margin: 0 15px 15px 0;
+    border: 1px solid #000000;
+    border-width: 1px 0 0 1px; }
 #hints {
   float: right;
   width: 500px;

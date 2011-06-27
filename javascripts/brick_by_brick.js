@@ -4,6 +4,7 @@ $(function() {
   var game = {
     board: [],
     $board: $("#board"),
+    $row: $("<div />", { "class": "row" }),
     loadFile: function(f) {
       $.get(f, function(xml) {
         game.$xml = $(xml);
@@ -33,17 +34,35 @@ $(function() {
     },
     parseRows: function() {
       game.board = game.$xml.find("board").text().split(",");
-      $.each(game.board, function(k, v) {
-        var $r = $("<div />", { "class": "row" }),
-            contents = [];
-        v = $.trim(v).split("");
-        contents.push("<span class=\"heading\">" + (k + 1) + "</span>");
-        for (var i = 0, len = v.length; i < len; i++) {
-          contents.push("<span" + (v[i] === "=" ? " class=\"null\">" : ">") +
-                        v[i] + "</span>");
-        }
-        $r.html(contents.join("")).appendTo(game.$board);
-      });
+      game.createFirstRow();
+      game.createPieces();
+      game.createEmptyRows();
+    },
+    createFirstRow: function() {
+      var contents = [],
+          freebies = $.trim(game.board[0]).split("");
+      contents.push("<span class=\"heading\">1</span>");
+      for (var i = 0, len = freebies.length; i < len; i++) {
+        contents.push("<span" + (freebies[i] === "=" ? " class=\"null\">" : ">") +
+                      freebies[i] + "</span>");
+      }
+      game.$row.clone().html(contents.join("")).appendTo(game.$board);
+    },
+    createPieces: function() {
+    },
+    createEmptyRows: function() {
+      var $block = $("<div />", { "class": "piece" }).html((new Array(7)).join('<span></span>')),
+          $row = (function() {
+            var $r = game.$row.clone();
+            for (var i = 0; i < 5; i++) {
+              $r.append($block.clone());
+            }
+            return $r;
+          })();
+      for (var i = 2; i < 16; i += 2) {
+        $row.clone().prepend('<span class="heading">' + i + '<br />' + (i + 1) + '</span>')
+          .appendTo(game.$board);
+      }
     },
     init: function(filename) {
       game.loadFile(filename);
