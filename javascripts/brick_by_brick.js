@@ -6,6 +6,7 @@ $(function() {
     $board: $("#board"),
     $pieces: $("#pieces"),
     $row: $("<div />", { "class": "row" }),
+    $selected: null,
     loadFile: function(f) {
       $.get(f, function(xml) {
         game.$xml = $(xml);
@@ -105,8 +106,24 @@ $(function() {
         selector: ".piece",
         "parent": "#pieces",
         click: function() {
-          if ("$selected" in game) { game.$selected.removeClass("selected"); }
-          game.$selected = $(this).addClass("selected");
+          var $p = $(this);
+          if (!game.$selected) {
+            game.$selected = $p.addClass("selected");
+          }
+          else {
+            game.$selected.removeClass("selected");
+            game.$selected = (game.$selected.is($p)) ? null : $p.addClass("selected");
+          }
+        }
+      },
+      clickSpace: {
+        selector: ".piece",
+        "parent": "#board",
+        click: function() {
+          if (!game.$selected) { return; }
+          if (game.$selected.hasClass("selected")) {
+            $(this).replaceWith(game.$selected.removeClass("selected"));
+          }
         }
       }
     },
