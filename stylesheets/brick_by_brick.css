@@ -41,6 +41,7 @@ body {
   float: left;
   width: 132px;
   height: 88px; }
+  .piece.selected { background: #44ccff; }
 
 #pieces {
   overflow: hidden;

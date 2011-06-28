@@ -38,6 +38,7 @@ $(function() {
       game.createFirstRow();
       game.createPieces();
       game.createEmptyRows();
+      game.attachEvents();
     },
     createFirstRow: function() {
       var contents = [],
@@ -88,6 +89,25 @@ $(function() {
       for (var i = 2; i < 16; i += 2) {
         $row.clone().prepend('<span class="heading">' + i + '<br />' + (i + 1) + '</span>')
           .appendTo(game.$board);
+      }
+    },
+    attachEvents: function() {
+      var e = game.events;
+      for (var m in e) {
+        for (var v in e[m]) {
+          if (v === "selector" || v === "parent") { continue; }
+          $(e[m]["parent"]).delegate(e[m].selector, v, e[m][v]);
+        }
+      }
+    },
+    events: {
+      clickPiece: {
+        selector: ".piece",
+        "parent": "#pieces",
+        click: function() {
+          if ("$selected" in game) { game.$selected.removeClass("selected"); }
+          game.$selected = $(this).addClass("selected");
+        }
       }
     },
     init: function(filename) {
