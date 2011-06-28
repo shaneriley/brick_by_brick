@@ -53,22 +53,27 @@ $(function() {
     },
     createPieces: function() {
       var $piece = $("<div />", { "class": "piece" }),
-          s1, s2;
+          pieces = [],
+          s1, s2, rand;
       game.answers = [];
       for (var i = 0, len = game.board.length; i < game.board.length; i += 2) {
         game.answers.push([]);
-        game.answers.push([]);
-        console.log(i);
         for (var j = 0; j < 5; j++) {
           var letters = [];
           s1 = game.board[i].substr(j * 3, 3);
           s2 = game.board[i + 1].substr(j * 3, 3);
-          game.answers[i].push(s1 + s2);
+          game.answers[i / 2].push(s1 + s2);
           $.each((s1 + s2).split(""), function(k, v) {
             letters.push(game.createLetter(v));
           });
-          $piece.clone().html(letters.join("")).appendTo(game.$pieces);
+          pieces.push($piece.clone().html(letters.join("")));
         }
+      }
+      pieces.sort(function() {
+        return Math.round(Math.random()) - .5;
+      });
+      for (var q = 0, len = pieces.length; q < len; q++) {
+        pieces[q].appendTo(game.$pieces);
       }
     },
     createEmptyRows: function() {
