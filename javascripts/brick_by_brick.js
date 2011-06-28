@@ -78,8 +78,11 @@ $(function() {
         pieces[q].appendTo(game.$pieces);
       }
     },
+    createEmptyPiece: function() {
+      return $("<div />", { "class": "piece empty" }).html((new Array(7)).join('<span></span>'));
+    },
     createEmptyRows: function() {
-      var $piece = $("<div />", { "class": "piece empty" }).html((new Array(7)).join('<span></span>')),
+      var $piece = game.createEmptyPiece(),
           $row = (function() {
             var $r = game.$row.clone();
             for (var i = 0; i < 5; i++) {
@@ -113,6 +116,17 @@ $(function() {
           else {
             game.$selected.removeClass("selected");
             game.$selected = (game.$selected.is($p)) ? null : $p.addClass("selected");
+          }
+        }
+      },
+      doubleClickPiece: {
+        selector: ".piece",
+        "parent": "#board",
+        dblclick: function() {
+          var $p = $(this);
+          if (!$p.hasClass("empty")) {
+            game.createEmptyPiece().insertBefore($p);
+            $p.appendTo(game.$pieces);
           }
         }
       },
