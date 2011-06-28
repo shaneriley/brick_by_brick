@@ -79,7 +79,7 @@ $(function() {
       }
     },
     createEmptyRows: function() {
-      var $piece = $("<div />", { "class": "piece" }).html((new Array(7)).join('<span></span>')),
+      var $piece = $("<div />", { "class": "piece empty" }).html((new Array(7)).join('<span></span>')),
           $row = (function() {
             var $r = game.$row.clone();
             for (var i = 0; i < 5; i++) {
@@ -120,9 +120,10 @@ $(function() {
         selector: ".piece",
         "parent": "#board",
         click: function() {
-          if (!game.$selected) { return; }
+          var $s = $(this);
+          if (!game.$selected || !$s.hasClass("empty")) { return; }
           if (game.$selected.hasClass("selected")) {
-            $(this).replaceWith(game.$selected.removeClass("selected"));
+            $s.replaceWith(game.$selected.removeClass("selected"));
           }
         }
       }
