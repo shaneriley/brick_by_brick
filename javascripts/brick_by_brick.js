@@ -139,8 +139,31 @@ $(function() {
           if (game.$selected.hasClass("selected")) {
             $s.replaceWith(game.$selected.removeClass("selected"));
           }
+          if (!game.$pieces.find(".piece").length) {
+            game.checkAnswers();
+          }
         }
       }
+    },
+    checkAnswers: function() {
+      var complete = true,
+          $pieces = game.$board.find(".piece");
+      for (var i = 0, len = game.answers.length; i < len; i++) {
+        if ($pieces.eq(i).text() !== game.answers[i]) {
+          complete = false;
+        }
+      }
+      game[(complete ? "" : "in") + "complete"]();
+    },
+    complete: function() {
+      var $p = $("p.message");
+      if (!$p.length) { $p = $("<p />", { "class": "message" }).prependTo(document.body); }
+      $p.removeClass("incomplete").text("Complete!");
+    },
+    incomplete: function() {
+      var $p = $("p.message");
+      if (!$p.length) { $p = $("<p />", { "class": "message" }).prependTo(document.body); }
+      $p.addClass("incomplete").text("You've got some misplaced pieces!");
     },
     init: function(filename) {
       game.loadFile(filename);

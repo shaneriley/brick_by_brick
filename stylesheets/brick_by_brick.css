@@ -4,6 +4,14 @@ body {
   font: normal 20px Helvetica, Arial, sans-serif;
   color: #333333; }
 
+p.message {
+  padding: 5px 10px;
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center; }
+p.incomplete { color: #b00b00; }
+
 #board {
   float: left;
   width: 704px;
