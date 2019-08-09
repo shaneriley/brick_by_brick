@@ -1,0 +1,22 @@
+{
+  "name": "brick_by_brick",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaneriley/brick_by_brick.git"
+  },
+  "author": "Shane Riley <shane@shaneriley.com> (https://github.com/shaneriley)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaneriley/brick_by_brick/issues"
+  },
+  "homepage": "https://github.com/shaneriley/brick_by_brick#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}
