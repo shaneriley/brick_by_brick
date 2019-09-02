@@ -6,9 +6,10 @@ const board_template = {
     });
   },
 
-  render(game_data) {
+  render(game_data, id) {
     $(document.body).html(`
     <header>
+      <p>${id}</p>
       <h1>${game_data.title}</h1>
       <h2>${game_data.hint}</h2>
       <a href="#" data-id="back">Back</a>
@@ -238,8 +239,9 @@ class Puzzle {
         $p.addClass("incomplete").text("You've got some misplaced pieces!");
       },
       init: function(filename) {
+        const id = filename.split("/").pop().replace(/\..+$/, "").replace(/^\d+_/, "");
         this.loadFile(filename).done(() => {
-          board_template.render(this.data);
+          board_template.render(this.data, id);
           this.$board = $("#board");
           this.$pieces = $("#pieces");
           this.parse();

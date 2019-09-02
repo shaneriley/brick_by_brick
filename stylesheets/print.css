@@ -1,0 +1,54 @@
+html, body {
+  font-size: 13px;
+}
+
+header a {
+  display: none;
+}
+
+#board {
+  width: 384px;
+  height: 384px;
+}
+
+.row.heading {
+  margin-left: 23px;
+}
+  .row.heading span {
+    width: 24px;
+  }
+
+.row span,
+.piece span {
+  width: 23px;
+  height: 23px;
+  line-height: 23px;
+}
+
+.piece {
+  width: 72px;
+  height: 48px;
+}
+
+#pieces {
+  float: left;
+  width: 361px;
+  max-height: auto;
+  overflow: hidden;
+  padding-left: 23px;
+}
+
+#pieces .piece {
+  margin: 0 8px 8px 0;
+}
+
+#hints {
+  width: 410px;
+}
+  #hints article {
+    width: 195px;
+    padding-right: 10px;
+  }
+  #hints ol {
+    font-size: 12px;
+  }
