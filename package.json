@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/shaneriley/brick_by_brick#readme",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
